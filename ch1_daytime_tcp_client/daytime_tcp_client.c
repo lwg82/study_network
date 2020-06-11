@@ -37,7 +37,8 @@ int main(int argc, char *argv[])
   if(inet_pton(AF_INET, ip, &server_address.sin_addr) <= 0)
     CONSOLE_ERROR_LOG_FMT(0, "inet_pton error for %s", ip);
   
-  if((error_code = connect(nSockFD, (struct sockaddr*)&server_address, sizeof(server_address))) < 0)
+  socklen_t slen = sizeof(server_address); // 使用 socket 类型,兼容64位系统
+  if((error_code = connect(nSockFD, (struct sockaddr*)&server_address, slen)) < 0)
     CONSOLE_ERROR_LOG(error_code);
     
   while((read_bytes = read(nSockFD, recv_buf, BUF_STRING_LEN_4K)) > 0)
