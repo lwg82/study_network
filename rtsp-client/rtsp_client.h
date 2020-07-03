@@ -16,11 +16,17 @@
 
 #include "common.h"
 
+/*
+ * https://blog.csdn.net/li_wen01/article/details/101108667
+ */
+
 
 int RTSP_CLIENT_Init(RTSP_CLIENT_Data *data);
 int RTSP_CLIENT_Release(RTSP_CLIENT_Data *data);
 int RTSP_CLEINT_Session(RTSP_CLIENT_Data *data);
 
+// 获取服务端提供的可用方法
+int RTSP_Client_OPTIONS(RTSP_CLIENT_Data *data);
 
 #endif
 

@@ -12,7 +12,7 @@
 #ifndef _COMMON_H_
 #define _COMMON_H_
 
-
+#define UNUSED_PARAMETER(p)  (void)p
 
 
 /***********¥ÌŒÛ¿‡–Õ***********/

@@ -32,7 +32,11 @@ void ForDebug(){
     return;
   }
   
-  
+  // option
+  if((nRet=RTSP_Client_OPTIONS(&rtsp_client_data)) != D_SUCCESS){
+    CONSOLE_ERROR_LOG_FMT(0, "Rtsp client option error %d ", nRet);
+    return;
+  }
   
   
   // release

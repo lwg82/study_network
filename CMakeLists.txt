@@ -10,9 +10,9 @@ enable_language(CXX)
 
 # cmake .. -DCMAKE_BUILD_TYPE=Debug
 # gcc
-#set(CMAKE_C_FLAGS  "-g -Wall -O0 -Wextra -Wvla -Wno-unused-function -Werror-implicit-function-declaration -Wno-missing-braces -Wno-missing-field-initializers ${CMAKE_C_FLAGS} -std=gnu99 -fno-strict-aliasing")
+set(CMAKE_C_FLAGS  "-g -O0 -Wall -Wextra -Wvla -Wno-unused-function -Werror-implicit-function-declaration -Wno-missing-braces -Wno-missing-field-initializers ${CMAKE_C_FLAGS} -std=gnu99 -fno-strict-aliasing")
 # g++
-#set(CMAKE_CXX_FLAGS "-g -O0 -Wall -Wextra -Wvla -Wno-unused-function -Werror-implicit-function-declaration -Wno-missing-field-initializers ${CMAKE_CXX_FLAGS} -std=c++11  -fno-strict-aliasing")
+set(CMAKE_CXX_FLAGS "-g -O0 -Wall -Wextra -Wvla -Wno-unused-function -Werror-implicit-function-declaration -Wno-missing-field-initializers ${CMAKE_CXX_FLAGS} -std=c++11  -fno-strict-aliasing")
 
 # ---------------------------------------------------------------------------------------
 # Set default build to Debug release 
@@ -24,10 +24,15 @@ endif()
 # ---------------------------------------------------------------------------------------
 # Compiler config
 # ---------------------------------------------------------------------------------------
-if(NOT CMAKE_CXX_STANDARD)
-    set(CMAKE_CXX_STANDARD 11)
-    set(CMAKE_CXX_STANDARD_REQUIRED ON)
-endif()
+#set(CMAKE_C_FLAGS "-std=c99")
+MESSAGE(STATUS ${CMAKE_C_FLAGS})
+
+#if(NOT CMAKE_CXX_STANDARD)
+#    set(CMAKE_CXX_STANDARD 11)
+#    set(CMAKE_CXX_STANDARD_REQUIRED ON)
+#endif()
+
+MESSAGE(STATUS ${CMAKE_CXX_FLAGS})
 
 set(CMAKE_CXX_EXTENSIONS OFF)
 
